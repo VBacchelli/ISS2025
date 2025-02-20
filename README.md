@@ -1,0 +1,1 @@
+Materiale relativo al corso di Ingegneria dei Sistemi Software dell'Anno Accademico 2024-2025 (Ingegneria Informatica M - Alma Mater Studiorum, Università di Bologna)
