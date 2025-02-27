@@ -1,0 +1,577 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <!--
+<link rel="stylesheet" type="text/css" href="../css/issStyle1.css">
+<script type="text/javascript" src="../css/issStyle.js"></script>
+-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js"crossorigin="anonymous"></script> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./commons/resources/styles/templateISS.css">
+        <link rel="stylesheet" type="text/css" href="./commons/resources/styles/main.css">
+        <link rel="stylesheet" type="text/css" href="./commons/resources/styles/navbar.css">
+        <link rel="stylesheet" type="text/css" href="./commons/resources/styles/table.css">
+        <link rel="stylesheet" type="text/css" href="./commons/resources/styles/code.css">
+        <!-- <script type="text/javascript" src="./commons/resources/scripts/myScripts.js"></script> -->
+<style type="text/css">
+body
+{
+    margin-left:  30px;
+    margin-right: 30px;
+};
+
+P
+{
+    font-family: Tahoma;
+    font-size: 10pt;
+};
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+	font-size: 93%;
+}
+
+a:hover {
+    background-color: #cccccc;
+}
+
+
+hr {
+    clear: both;
+    height: 1px;
+    color: #242424;
+    background-color: transparent;
+}
+
+h1, h2, h3 {
+    color: #242424;
+    clear: left;
+    font: 100% Tahoma, Helvetica, Arial, sans-serif;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+top {
+	width: 100%;
+}
+
+
+#i {
+    color: #ff1010;
+}
+tt{
+	font-family: "Arial";
+    font-size: 90%;
+	color: #006600;
+}
+em{
+	font-family: "Arial";
+    font-size: 80%;
+	font-weight: bold;
+	border-style:solid;
+	border-color: #abe876;
+    color: #1632cc;
+}
+bc{
+	font-family: "Arial";
+	font-size: 90%;
+	font-weight: bold;
+    color: #990000;
+	background-color: #fcf8c7;
+}
+ks{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #0000CD	;
+	font-size: 90%;
+}
+kc{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #008000	;
+	font-size: 90%;
+}
+pre{
+	font-family: "Consolas";
+	font-size: 85%;
+	background-color: #f5f5f5;
+	border: 1.5px solid silver;
+	padding: 5px;
+}
+m{
+	font-family: "Helvetica";
+	line-height: 100%;
+ 	font-size: 75%;
+}
+div.body{
+	 
+    font-size: 18px;
+}
+k{
+    color: #990000;
+	font-weight: bold;
+	font-size: 90%;
+}
+h1 {
+    font-size: 150%;
+    background-color: #b2c0ff;
+	padding: 10px;
+}
+
+h2 {
+    background-color: #9ed8ff;
+    font-size: 130%;
+}
+
+h3 {
+	background-color: #e6ccff;
+    font-size: 100%;
+}
+h4 {
+    background-color: #ccffcc;
+    font-size: 100%;
+	width: 95%;
+	border-radius: 5px;
+	padding: 2px;
+}
+h5 {
+    background-color: #d5ffb0;
+    font-size: 100%;
+
+}
+div.req{
+	background-color: #d9ffb3;
+    font-size: 18px;
+	width: 700px;
+    border: 3px solid green;
+    padding: 15px;
+    margin: 10px;
+}
+div.remark{
+	background-color: #E3F2FD;
+    border: 1.5px solid #d5f2ed;
+    padding: 15px;
+    margin: 10px;
+	border-radius: 25px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+ol, ul, li {
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+img {
+	border: 1.5px solid #d5f2ed
+
+}
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #adf1ff;
+    background-color: transparent;
+}
+
+div.wrapdesc{
+	width: 90%;
+	margin: auto;
+}
+
+div.imagedesc{
+	width: 85%;
+	margin: auto;
+}
+
+.dictionary {
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid black;
+}
+.dictionary tr {
+    text-align: center;
+}
+.dictionary th {
+    border: 1px solid black;
+    padding: 5px 5px 5px 5px;
+    font-weight: bold;
+    cursor: pointer;
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+    background-color: white;
+}
+.dictionary td {
+    padding: 5px 5px 15px 5px;
+}
+td ol, td ul {
+    text-align: left;
+}
+
+.dictionary td:first-child {
+    font-family: "Arial";
+	font-weight: bold;
+    color: #0000CD	;
+}
+</style>
+    
+ 
+   
+</head>
+   
+<title>Bacchelli Valentina</title></head>
+    
+<!--
+	<body onload="loadNav();">
+		<div id="openButton" class="openButton" onclick="openNav(true)">&#9776; Menu</div>
+		<div id="sidenav" class="sidenav">
+			<a class="closeButton" href="javascript:void(0)" onclick="closeNav(true)">&times;</a>
+			<a href=".README.html">ReadMe</a>
+			<a class="sprint" href="../../../Sprint0/Codice/userDocs/Cold%20Storage%20Service%20-%20Natali%20V3.html">Sprint0</a>
+			<a class="sprint" href="../../../Sprint1.0/Codice/userDocs/Sprint%201.0%20-%20V3.html">Sprint1.0</a>
+			<a class="sprint" href="../../../Sprint1.1/Codice/userDocs/Sprint%201.1%20-%20V3.html">Sprint1.1</a>
+			<a id="currentSprint" class="sprint" href="#">&#8211;&#8212; Sprint2 &#8212;&#8211;</a>
+			<div class="sidenavSection">
+				<a href="#Goal Sprint 2">Goal Sprint 2</a>
+				<a href="#Requisiti">Requisiti</a>
+				<a href="#Analisi dei Requisiti">Analisi dei Requisiti</a>
+				<a href="#Analisi del Problema">Analisi del Problema</a>
+				<a href="#Test Plan">Test Plan</a>
+				<a href="#Progettazione">Progettazione</a>
+				<a href="#Deployment">Deployment</a>
+			</div>
+			<p class="separator">&mdash;&mdash;&mdash;&ndash;&ndash;&mdash;&mdash;&mdash;</p>
+			<a class="sprint" href="../../../Sprint3/Codice/userDoc/Sprint%203.html">Sprint3</a>
+			<bottom-spacer/>
+		</div>
+-->
+<body>
+<div id="top">
+<h1>LABORATORIO DI INGEGNERIA DEI SISTEMI SOFTWARE <font size="5"></font> </h1>
+</div>  
+
+<div class="body"> 
+<h2>Introduction</h2>
+<div>
+Si ha a disposizione l'applicazione ConwayLife25 in Java, al momento non dotata di una GUI e con input statico fornito dalla classe ConwayInputMock.java. È richiesto ora di creare una GUI che consenta di far inserire la configurazione iniziale all'utente. 
+</div>
+ 
+<h2>Requirements</h2>
+<div>
+	Realizzazione di una pagina HTML che funga da dispostivo di input-ouput evoluto per l’applicazione ConwayLife25 in Java.
+	La pagina HTML svolge il ruolo di:
+	<ul>
+		<li>un dispositivo di input, in quanto permette a un utente umano di settare lo stato iniziale delle celle e di inviare comandi di gestione dell’applicazione con i pulsanti start/stop/exit.</li>
+		<li>un dispositivo di output, in quanto permette di visualizzare lo stato della griglia.</li>
+	</ul>
+	I files relativi alla sua realizzazione sono:
+	<ul>
+		<li>guipage.html: pagina HTML</li>
+		<li>WSConwayguiLifeMqtt: gestione delle WebSocket lato server</li>
+		<li>iomap.js: mappa con le celle</li>
+		<li>commsocket.js: gestione della WebSocket lato client</li>
+	</ul>
+</div>
+
+<h2>Requirement analysis</h2>
+<h3>Lista dei requisiti</h3>
+<div>
+	<b>Requisiti funzionali</b>
+	<ol>
+		<li>L'applicazione deve inviare al server la configurazione iniziale alla fine dello stadio di setting</li>
+		<li>L'applicazione deve segnalare al server gli input dell'utente per richiedere o fermare l'invio delle configurazioni calcolate durante lo stadio evolutivo</li>
+		<li>L'applicazione deve permettere all'utente di inserire la configurazione iniziale della griglia durante lo stadio di "setting"</li>
+		<li>L'applicazione deve permettere all'utente di visualizzare le configurazioni della griglia ricevute durante lo stadio "evolutivo"</li>
+		<li>L'applicazione deve contenere un pulsante "start" che permette di iniziare o continuare lo stadio evolutivo</li>
+		<li>L'applicazione deve contenere un pulsante "stop" che permette di fermare lo stadio evolutivo per osservare la configurazione attuale</li>
+		<li>L'applicazione deve contenere un pulsante "exit" che permette di tornare allo stadio di setting</li>
+		<li>L'applicazione deve segnalare all'utente l'evento di game over, cioè la configurazione in cui tutte le celle sono morte, e poi fermare l'esecuzione</li>
+	</ol>
+
+	<b>Requisiti non funzionali</b>
+	<ol>
+		<li>L'applicazione, durante lo stadio evolutivo, deve visualizzare ogni configurazione della griglia ricevuta appena questa viene scaricata</li>
+		<li>L'applicazione deve gestire la comunicazione col server tramite WebSocket</li>
+		<li>Il pulsante "start" non può essere premuto se lo stadio evolutivo è in esecuzione</li>
+		<li>Il pulsante "stop" non può essere premuto se lo stadio evolutivo non è in esecuzione</li>
+		<li>Il pulsant "exit" non può essere premuto quando si è nello stadio di setting</li>
+		<li>L'applicazione deve presentare un'interfaccia esteticamente piacevole</li>
+	</ol>
+</div>
+<h3>Glossario</h3>
+<table class="dictionary">
+	<tr>
+		<th title="Click to sort alphabetically">Term</th>
+		<th title="Click to sort alphabetically">Definition</th>
+	</tr>
+	<tr>
+		<td><b>Cella</b></td>
+		<td>Singola cella della griglia che compone l'interfaccia principale di gioco</td>
+	</tr>
+	<tr>
+		<td><b>Cella viva</b></td>
+		<td>Cella della griglia nello stato "viva", rappresentata da un colore verde</td>
+	</tr>
+	<tr>
+		<td><b>Cella morta</b></td>
+		<td>Cella della griglia nello stato "morta", rappresentata da un colore grigio</td>
+	</tr>
+	<tr>
+		<td><b>Configurazione della griglia</b></td>
+		<td>Lo stato di ogni singola cella della griglia (viva o morta)</td>
+	</tr>
+	<tr>
+		<td><b>Stadio di setting</b></td>
+		<td>Fase di inizializzazione del gioco che consiste nell'impostazione della configurazione iniziale della griglia, ovvero quali celle sono vive e quali morte a inizio gioco</td>
+	</tr>
+	<tr>
+		<td><b>Stadio evolutivo</b></td>
+		<td>Fase di esecuzione del gioco in cui si possono vedere via via le configurazioni che si creano nel tempo seguendo le regole</td>
+	</tr>
+</table>
+<h3>Scenari</h3>
+<table class="dictionary">
+    <tr>
+        <th><b>Titolo</b></th>
+        <td>Stadio di setting</td>
+    </tr>
+    <tr>
+        <th><b>Descrizione</b></th>
+        <td>Questo è lo stadio primario in cui si trova l'utente dove immette la configurazione iniziale e questa viene inviata al server</td>
+    </tr>
+    <tr>
+        <th><b>Attori</b></th>
+        <td>Utente</td>
+    </tr>
+    <tr>
+        <th><b>Precondizioni</b></th>
+        <td>Si è appena aperta l'app o premuto il pulsante exit</td>
+    </tr>
+    <tr>
+        <th><b>Postcondizioni</b></th>
+        <td>Ci si trova nello stadio evolutivo in esecuzione</td>
+    </tr>
+    <tr>
+        <th><b>Scenario principale</b></th>
+        <td>
+            <ol>
+                <li>L'Utente immette la configurazione iniziale della griglia</li>
+                <li>L'Utente preme il tasto start quando ha concluso</li>
+                <li>Viene inviata la configurazione al server</li>
+                <li>Si passa allo stadio evolutivo che entra in esecuzione</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <th><b>Scenari alternativi</b></th>
+        <td>
+            <ul>
+                <li>L'invio al server fallisce e viene segnalato all'utente</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th><b>Requisiti non funzionali</b></th>
+        <td>R2NF, R4NF, R5NF</td>
+    </tr>
+    <tr>
+        <th><b>Punti aperti</b></th>
+        <td>Basta inviare quali celle sono in un certo stato per risparmiare banda</td>
+    </tr>
+</table>
+
+<table class="dictionary">
+    <tr>
+        <th><b>Titolo</b></th>
+        <td>Stadio evolutivo in esecuzione</td>
+    </tr>
+    <tr>
+        <th><b>Descrizione</b></th>
+        <td>i visualizzano le configurazioni ricevute dal server e si controlla che il gioco non sia finito avvisando l'utente in caso contrario</td>
+    </tr>
+    <tr>
+        <th><b>Attori</b></th>
+        <td>Utente</td>
+    </tr>
+    <tr>
+        <th><b>Precondizioni</b></th>
+        <td>L'ultimo tasto premuto è stato start</td>
+    </tr>
+    <tr>
+        <th><b>Postcondizioni</b></th>
+        <td>Si sono visualizzate tutte le configurazioni ricevute dal server</td>
+    </tr>
+    <tr>
+        <th><b>Scenario principale</b></th>
+        <td>Si ripetono in modo ciclico queste fasi
+            <ol>
+                <li>Viene ricevuta una configurazione dal server</li>
+                <li>Viene verificato che non tutte le celle siano morte, in questo caso si ferma la ricezione e viene visualizzato un avviso</li>
+                <li>Viene visualizzata la configurazione ricevuta all'utente</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <th><b>Scenari alternativi</b></th>
+        <td>
+            <ul>
+                <li>La ricezione della configurazione fallisce</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th><b>Requisiti non funzionali</b></th>
+        <td>R1NF, R2NF, R3NF</td>
+    </tr>
+    <tr>
+        <th><b>Punti aperti</b></th>
+        <td>Per risparmiare banda possono essere ricevuti solo i cambiamenti dalle configurazioni precedenti, possibilità di aggiunta di un'animazione per il passaggio da una configurazione all'altra</td>
+    </tr>
+</table>
+
+<table class="dictionary">
+    <tr>
+        <th><b>Titolo</b></th>
+        <td>Stadio evolutivo in pausa</td>
+    </tr>
+    <tr>
+        <th><b>Descrizione</b></th>
+        <td>Questo è lo stadio in cui si trova l'utente durante il gioco dopo aver premuto il pulsante stop</td>
+    </tr>
+    <tr>
+        <th><b>Attori</b></th>
+        <td>Utente</td>
+    </tr>
+    <tr>
+        <th><b>Precondizioni</b></th>
+        <td>Lo stadio evolutivo era in esecuzione e si è premuto il pulsante stop</td>
+    </tr>
+    <tr>
+        <th><b>Postcondizioni</b></th>
+        <td>Ci si trova nello stadio evolutivo in pausa e si può vedere la configurazione più recente della griglia</td>
+    </tr>
+    <tr>
+        <th><b>Scenario principale</b></th>
+        <td>
+            <ol>
+                <li>L'Utente preme il tasto stop durante lo stadio evolutivo</li>
+                <li>Viene segnalato al server di sospendere l'esecuzione e rimane visualizzata l'ultima configurazione calcolata</li>
+				<li>L'Utente può premere il tasto start per riprendere l'esecuzione oppure exit per tornare allo stadio di setting</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <th><b>Scenari alternativi</b></th>
+        <td>
+            <ul>
+                <li>La comunicazione col server fallisce e viene segnalato all'utente</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th><b>Requisiti non funzionali</b></th>
+        <td>R2NF, R3NF, R4NF, R5NF</td>
+    </tr>
+    <tr>
+        <th><b>Punti aperti</b></th>
+        <td></td>
+    </tr>
+</table>
+
+<h2>Problem analysis</h2>
+<h3>Tabella delle funzionalità</h3>
+<div>
+	<table class="dictionary">
+		<tr>
+			<th>Funzionalità</th>
+			<th>Tipo</th>
+			<th>Requisiti collegati</th>
+		</tr>
+		<tr>
+			<td>Stadio di setting</td>
+			<td>Gestione Dati, Memorizzazione Dati, Interazione con l'esterno</td>
+			<td>R1F, R3F, R2NF, R4NF, R5NF</td>
+		</tr>
+		<tr>
+			<td>Stadio evolutivo in esecuzione</td>
+			<td>Gestione Dati, Memorizzazione Dati, Interazione con l'esterno</td>
+			<td>R2F, R4F, R5F, R7F, R8F, R1NF, R2NF R4NF</td>
+		</tr>
+		<tr>
+			<td>Stadio evolutivo in pausa</td>
+			<td>Gestione Dati, Memorizzazione Dati, Interazione con l'esterno</td>			
+			<td>R6F, R7F, R2NF</td>
+		</tr>
+	</table>
+</div>
+
+<h3>Tabella maschere</h3>
+<table class="dictionary">
+	<tr>
+		<th>Maschera</th>
+		<th>Informazioni</th>
+		<th>Funzionalità</th>
+	</tr>
+	<tr>
+		<td>Home</td>
+		<td>Configurazione della griglia (composta da celle vive e morte nell'istante corrente)</td>
+		<td>Stadio di setting, stadio evolutivo in esecuzione, stadio evolutivo in pausa</td>
+	</tr>
+</table>
+
+<h3>Tempi di realizzazione previsti</h3>
+<div>
+	<ul>
+		<li>Creazione dell'interfaccia e delle WebSocket per la comunicazione: 1 giorno</li>
+		<li>Creazione dei test e collaudo del sistema: 1 giorno</li>
+	</ul>
+</div>
+
+<h2>Test plans</h2> 
+<div>
+    I test dovranno verificare:
+    <ul>
+        <li>Il corretto funzionamento dei pulsanti di controllo (start, stop, exit).</li>
+        <li>La corretta visualizzazione dello stato della griglia.</li>
+        <li>La comunicazione tramite WebSocket tra client e server.</li>
+    </ul>
+</div>
+
+<h2>Project</h2> 
+  
+
+<h2>Testing</h2> 
+
+
+<h2>Deployment</h2> 
+
+ 
+<h2>Maintenance</h2> 
+
+	      	
+<br/><br/> 	
+</div>  
+ 
+<div style="background-color:rgba(86, 56, 253, 0.9); width:60%;text-align:left;color:white">
+	By Bacchelli Valentina email: valentina.bacchelli@studio.unibo.it, 
+	<!-- <img src="./img/mbot-S.jpg" alt="mbot" width="15%" height="15%"> -->
+	<img src="./img/vale.jpg" alt="valentina bacchelli" width="15%" height="15%">
+	GIT repo: https://github.com/VBacchelli/ISS2025
+</div> 
+</body>
+</html>

@@ -3,13 +3,20 @@ package conway;
 public class Cell {
 	private boolean alive;
 
-	public boolean isAlive() {
+	public Cell(boolean alive) {
+		this.alive = alive;
+	}
+
+	protected boolean isAlive() {
 		return alive;
 	}
 
-	public void setAlive(boolean alive) {
+	protected void setAlive(boolean alive) {
 		this.alive = alive;
 	} 
 	
+	protected void switchState() {
+		this.alive = !this.alive;
+	}
 	
 }
