@@ -17,7 +17,6 @@ public class Life {
     public Life( int rowsNum, int colsNum ) {
         this.rows   = rowsNum;
         this.cols   = colsNum;
-        createGrids();   
     }
 
     public int getRowsNum(){
@@ -37,20 +36,17 @@ public class Life {
          nextGrid.resetGrid();
     }
 
-    protected void computeNextGen( IOutDev outdev ) {
+    protected void computeNextGen() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 int n = grid.countNeighborsLive(i,j);
-                applyRules(i, j, n);
-                outdev.displayCell( ""+(grid.isCellAlive(i,j) ? "1" : "0") ); 
+                applyRules(i, j, n); 
             }
-            outdev.displayCell("\n");  //Va tolta nel caso della GUI?
         }
-        copyAndResetGrid( outdev );
-        outdev.displayCell("\n");
+        copyAndResetGrid();
     }
 
-    protected void copyAndResetGrid( IOutDev outdev ) {
+    protected void copyAndResetGrid() {
     	for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 grid.setCellState(i, j, nextGrid.isCellAlive(i, j));
