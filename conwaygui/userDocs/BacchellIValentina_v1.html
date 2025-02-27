@@ -101,6 +101,7 @@
 			<li>Il pulsante "start" non può essere premuto se lo stadio evolutivo è in esecuzione</li>
 			<li>Il pulsante "stop" non può essere premuto se lo stadio evolutivo non è in esecuzione</li>
 			<li>Il pulsant "exit" non può essere premuto quando si è nello stadio di setting</li>
+			<li>La GUI deve essere implementata sotto forma di una pagina HTML</li>
 			<li>L'applicazione deve gestire la comunicazione col server tramite WebSocket</li>
 		</ol>
 	</div>
@@ -142,7 +143,13 @@
 
 	<h3>Software fornito dal committente</h3>
 	<div>
-		
+		<ul>
+			<li><b>IOutDev.java:</b> contratto per la visualizzazione dello stati di una cella</li>
+			<li><b>Life.java:</b> definisce funzioni per la gestione della griglia e del gioco</li>
+			<li><b>LifeController.java:</b> definisce funzioni per il controllo del gioco</li>
+			<li><b>ConwayOutput.java:</b> implementa IOutDev.java su System.out</li>
+			<li><b>ConwayInputMock.java:</b> simula l’input dell’utente per la configurazione iniziale</li>
+		</ul>
 	</div>
 
 <h2>Problem analysis</h2>
