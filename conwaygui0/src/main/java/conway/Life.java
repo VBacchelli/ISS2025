@@ -1,5 +1,6 @@
 package conway;
 
+import java.util.Objects;
 
 /*
  * Il core di game of life
@@ -84,7 +85,20 @@ public class Life {
     public  boolean isCellAlive( int i, int j  ) {
         return   grid.isCellAlive(i, j);
     }
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Life other = (Life) obj;
+		return cols == other.cols && rows == other.rows;
+	}
  
+    
 
 
 }

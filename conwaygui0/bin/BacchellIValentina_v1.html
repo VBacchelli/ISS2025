@@ -101,6 +101,7 @@
 			<li>Il pulsante "start" non può essere premuto se lo stadio evolutivo è in esecuzione</li>
 			<li>Il pulsante "stop" non può essere premuto se lo stadio evolutivo non è in esecuzione</li>
 			<li>Il pulsant "exit" non può essere premuto quando si è nello stadio di setting</li>
+			<li>La GUI deve essere implementata sotto forma di una pagina HTML</li>
 			<li>L'applicazione deve gestire la comunicazione col server tramite WebSocket</li>
 		</ol>
 	</div>
@@ -142,17 +143,44 @@
 
 	<h3>Software fornito dal committente</h3>
 	<div>
-		
+		<ul>
+			<li><b>IOutDev.java:</b> contratto per la visualizzazione dello stati di una cella</li>
+			<li><b>Life.java:</b> definisce funzioni per la gestione della griglia e del gioco</li>
+			<li><b>LifeController.java:</b> definisce funzioni per il controllo del gioco</li>
+			<li><b>ConwayOutput.java:</b> implementa IOutDev.java su System.out</li>
+			<li><b>ConwayInputMock.java:</b> simula l’input dell’utente per la configurazione iniziale</li>
+		</ul>
 	</div>
 
 <h2>Problem analysis</h2>
- 
+<h3>Considerazioni sul processo di sviluppo</h3>
+<div>
+	<ul>
+		<li>Poiché la GUI è richiesta sotto forma di pagina HTML, bisognerà che essa comunichi con l'applicazione Java che implementa la logica di business. Dai requisiti si può vedere che questa comunicazione dovrà essere implementata tramite WebSocket, il che lascia intendere che più persone avranno la possibilità di connettersi. In questo caso, sarà necessario decidere come i vari utenti possono interagire col gioco. Per evitare confusione, si ritiene opportuno nominare un unico utente owner che potrà interagire con il gioco, mentre gli altri utenti collegati faranno solamente da spettatori. Per semplicità, si nominerà owner il primo utente a connettersi.</li>
+		<li>Per evitare che il gioco continui a calcolare configurazioni anche una volta che la griglia sia diventata completamente vuota o stabile, sarà necessario implementare dei controlli che fermino l'esecuzione in questi casi e lo comunichino agli utenti.</li>
+	</ul>
+</div>
+
+<h3>Tempi di realizzazione previsti</h3>
+<div>
+	<ul>
+		<li>Implementazione della GUI: 6 ore uomo</li>
+		<li>Implementazione della comunicazione tramite WebSocket: 4 ore uomo</li>
+		<li>Implementazione ed esecuzione dei test: 4 ore uomo</li>
+	</ul>
+</div>
 
 <h2>Test plans</h2> 
-
+<div>
+    I test dovranno verificare:
+    <ul>
+        <li>Il corretto funzionamento dei pulsanti di controllo (start, stop, exit).</li>
+        <li>La corretta visualizzazione dello stato della griglia.</li>
+        <li>La comunicazione tramite WebSocket tra client e server.</li>
+    </ul>
+</div>
 
 <h2>Project</h2> 
- 
  
 
 <h2>Testing</h2> 
