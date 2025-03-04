@@ -3,11 +3,9 @@ package unibo.disi.conwaygui;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.Test;
 
-@SpringBootTest
-class ConwayguiApplicationTests {
+public class Conway25JavaTest {
 
 	private static Life life, life2;
 	private static LifeController cc;
@@ -79,6 +77,5 @@ class ConwayguiApplicationTests {
 		life2.switchCellState(2, 2);
 		assertEquals(life2, life);
 	}
-
 
 }
