@@ -5,6 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import conway.Life;
+import conway.LifeController;
+
 public class Conway25JavaTest {
 
 	private static Life life, life2;

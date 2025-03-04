@@ -1,7 +1,10 @@
 package unibo.disi.conwaygui;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import unibo.disi.conwaygui.devices.ConwayInputMock;
+
+import conway.Life;
+import conway.LifeController;
+import conway.devices.ConwayInputMock;
 
 @SpringBootApplication
 public class ConwayguiApplication {
