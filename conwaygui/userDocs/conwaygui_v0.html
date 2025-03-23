@@ -264,13 +264,60 @@ Sviluppo del progetto conwaygui come microservizio seguendo i passaggi riportati
 </div> 
 
 <h2>Requirement analysis</h2>
-  
+<ul>
+	<li>Poiché la GUI è richiesta sotto forma di pagina HTML, bisognerà che essa comunichi con l'applicazione Java che implementa la logica di business. Dai requisiti si può vedere che questa comunicazione dovrà essere implementata tramite WebSocket, tecnologia che ci permette di ridurre la banda necessaria comunicando solamente le modifiche avvenute nella pagina anziché l'intero contenuto. Questo lascia inoltre intendere che più persone avranno la possibilità di connettersi; in questo caso, sarà necessario decidere come i vari utenti possono interagire col gioco. Per evitare confusione, si ritiene opportuno nominare un unico utente owner che potrà interagire con il gioco, mentre gli altri utenti collegati faranno solamente da spettatori. Per semplicità, si nominerà owner il primo utente a connettersi.</li>
+</ul>
+<br/>
+I componenti essenziali della GUI dovranno essere:
+<ul>
+	<li>Una griglia che mostri lo stato delle celle e permetta di cliccare su ciascuna per modificarlo</li>
+	<li>Un pulsante che avvii l'evoluzione delle celle (START)</li>
+	<li>Un pulsante che metta in pausa l'evoluzione (STOP)</li>
+	<li>Un pulsante che resetti la griglia (CLEAR)</li>
+	<li>Un pulsante per uscire dall'applicazione (EXIT)</li>
+</ul>
 
 <h2>Problem analysis</h2>
- 
+	<h3>User stories</h3>
+	<ul>
+		<li>Come possessore del gioco, mi aspetto che mi venga proposta una gui da cui mi sia data la possibilità di inizializzare la griglia. In seguito, deve essere possibile far partire l'evoluzione premendo un pulsante chiamato START, fermarla con un pulsante STOP e poi eventualmente resettare la griglia tramite un pulsante CLEAR. Mi aspetto anche la presenza di un pulsante EXIT per uscire dall'applicazione. All'inizializzazione, il comportamento atteso è che le celle cambino stato quando vengono cliccate, e che poi la loro evoluzione venga mostrata di conseguenza con gli stessi colori. Un ulteriore comportamento desiderato è che mi vengano comunicati gli stati in cui l'intera griglia è composta di celle morte oppure in cui l'evoluzione si sia stabilizzata, e l'esecuzione si fermi.</li>
+		<li>Come osservatore, mi aspetto di visualizzare la gui senza potervi interagire, ma comunque ricevendo gli aggiornamenti dello stato delle celle correttamente <u>anche se mi sono connesso in seguito rispetto all'avvio</u>.</li>
+	</ul>
+	<br/>
+	<h3>Analisi delle user stories</h3>
+	<ul>
+		<li>È necessario decidere chi sarà il possessore del gioco. Per semplicità, al momento nominiamo owner il primo utente che si connette.</li>
+		<li>Si deve mostrare l'evoluzione in tempo reale della griglia sulla pagina HTML, ma è preferibile evitare un reload dell'intera pagina a ogni cambiamento. Non si può però sfruttare una tecnologia che invii solamente l'ultimo aggiornamento dello stato, perché si vuole rendere possibile agli utenti osservatori di connettersi anche successivamente all'avvio dell'evoluzione e vedere lo stato corretto.</li>
+	</ul>
+	<br/>
+	<h3>Pattern MVC</h3>
+	Il microservizio sarà strutturato come segue:
+	<ul>
+		<li><b>Model:</b> costituito dalla business logic del gioco, già implementata in precedenza</li>
+		<li><b>View:</b> la pagina HTML che costituirà la GUI</li>
+		<li><b>Controller:</b> qui sorge un problema, ovvero che il controller già implementato si vuole mantenere indipendente dalla GUI, perciò ne servirà uno nuovo che gestisca anche la comunicazione tra front-end e back-end. Per questo si sceglie di ricorrere a SpringBoot.</li>
+	</ul>
 
-<h2>Test plans</h2> 
-
+	<h3>Tempi di realizzazione previsti</h3>
+	<div>
+		<ul>
+			<li>Implementazione della GUI in HTML: 6 ore uomo</li>
+			<li>Refactoring per introdurre l'utilizzo di SpringBoot: 3 ore uomo</li>
+			<li>Implementazione della comunicazione tramite WebSocket: 4 ore uomo</li>
+			<li>Implementazione ed esecuzione dei test: 4 ore uomo</li>
+		</ul>
+	</div>
+	
+	<h2>Test plans</h2> 
+	<div>
+		I test dovranno verificare:
+		<ul>
+			<li>Il corretto funzionamento dei pulsanti di controllo (start, stop, exit).</li>
+			<li>La corretta visualizzazione dello stato della griglia.</li>
+			<li>La comunicazione tramite WebSocket tra client e server.</li>
+			<li>Il corretto comportamento del sistema con più utenti connessi, in particolare la corretta attribuzione del ruolo di owner e dei relativi permessi.</li>
+		</ul>
+	</div>
 
 <h2>Project</h2> 
  
