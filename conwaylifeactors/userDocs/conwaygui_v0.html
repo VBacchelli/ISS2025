@@ -239,8 +239,7 @@ div.imagedesc{
 
 <div class="body"> 
 <h2>Introduction</h2>
-Sviluppo del progetto conwaygui in cui ogni cella è un attore di un sistema distribuito ed è in esecuzione su un dispositivo diverso.</a>
-
+Questo progetto implementa una versione distribuita del Gioco della Vita di Conway, in cui ogni cella è rappresentata come un attore indipendente in esecuzione su un dispositivo diverso.
 <h2>Requirements</h2>
 <div>
 	
@@ -259,7 +258,7 @@ Sorgono vari problemi:
 	<li>Comunicazione dello stato delle celle</li>
 	<li>Sincronizzazione delle epoche di aggiornamento</li>
 	<li>Interattività del sistema</li>
-	<li>Carico della rete</li>
+	<li>Carico della rete e scalabilità</li>
 </ul>
 prima di tutto sarà necessario introdurre il concetto di vicinanza tra le celle. Infatti ogni cella ha bisogno di sapere lo stato delle sue vicine per determinare come si evolverà, e poi deve comunicare a sua volta il suo stato ai vicini.
 Passando a un sistema distribuito, non avremo più modo di mantenere la griglia come struttura dati, le celle dovranno comunicare i propri stati alle altre, ma bisogna capire in che momento lo faranno. Una scelta abbastanza immediata è quella di rendere ogni cella un Observable a cui le altre possono registrarsi come Observer, e poi emettere un evento a ogni cambiamento di stato.
@@ -270,7 +269,7 @@ Passando a un sistema distribuito, non avremo più modo di mantenere la griglia 
 <p>
 	Per quanto riguarda l'interattività del sistema, non dimentichiamo l'esistenza dei pulsanti con cui l'utente può interagire col gioco. Ora che il sistema è distribuito ci si chiede chi dovrà reagire alla pressione di questi pulsanti. Servirà un qualche tipo di controller che rimanga in ascolto per queste interazioni e reagisca adeguatamente comunicando poi con le celle se devono fermarsi, ricominciare a evolvere, o resettarsi.
 </p>
-<p>Potrebbero verificarsi problemi di sovraccarico di rete, ma non ci sono molte soluzioni a parte cercare di ottimizzarne l'uso in ogni comunicazione effettuata.</p>
+<p>Potrebbero verificarsi problemi di sovraccarico di rete, ma non ci sono molte soluzioni a parte cercare di ottimizzarne l'uso in ogni comunicazione effettuata. Per quanto riguarda la scalabilità, con molte celle il numero di attori e comunicazioni dello stato aumenta molto, ma per il momento non abbiamo modo di testare la robustezza del sistema a questo proposito. </p>
 
 <h2>Test plans</h2> 
 	Sarà necessario testare prima di tutto la comunicazione tra le celle e il corretto aggiornamento degli stati.
