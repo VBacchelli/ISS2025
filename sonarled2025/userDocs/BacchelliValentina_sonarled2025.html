@@ -274,12 +274,17 @@ div.imagedesc{
 <p>Si rimanda all'<a href="RaspApplCode24.html#progetto-sonarqak24">analisi già svolta a lezione</a></p>
 <p>N.B. senza questa avrei pensato di fare meno attori; perché non unire in un attore unico sonar24 e sonardevice? Immagino sia migliore per la modularizzazione in caso di progetti più grandi, ma per il nostro caso mi sembra quasi esagerato dividere le responsabilità. Questa mia idea è supportata dal fatto che nei requisiti si parli di un attore che "gestisce" il sonar e rende disponibile la distanza a componenti interessati; da queste parole sembra quindi che sia un attore unico a fare da broker, ad avviare e fermare il sonar e a leggere la distanza misurata.</p>
 <p>Pensando al punto 2 delle mie considerazioni, inizia già a sembrarmi più logica questa separazione: posso avere un attore locale che legge da standard output, e pubblica le distanze su un topic MQTT. Tuttavia le responsabilità dei singoli componenti rimangono poche nonostante questa considerazione e si potrebbero comunque unire a mio parere.</p>
-
+<p>Proverò quindi a sviluppare il sistema sia a modo mio con meno attori che come suggerito dall'analisi svolta con il professore.</p>
 
 <h2>Progettazione</h2>
 <p>La prima parte della progettazione è già stata <a href="RaspApplCode24.html#progetto-sonarqak24">svolta a lezione</a></p>
 
-<p>Si tratta qui invece la parte di progettazione relativa al SistemaRilevamento.</p>
+<p>Ci è stata assegnata da completare la parte di progettazione relativa al SistemaRilevamento, ma non è chiaro quali componenti siano intesi con questo nome.</p>
+
+<p>Per lo stesso motivo descritto nella parte di analisi del problema, mi risulta un po' ridondante inserire anche il componente datacleaner, tuttavia lo mantengo per implementare anche in un progetto così semplice le buone pratiche come il principio di singola responsabilità.</p>
+<p>Tale componente dovrà filtrare in modo più accurato (ovvero? cosa c'è di non accurato nel mettere <span class="pre">0&lt;D&lt;=150</span>?) i valori di distanza emessi da sonardevice.</p>
+
+
 
 
 <h2>Test plans</h2> 
