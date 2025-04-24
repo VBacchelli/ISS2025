@@ -287,6 +287,9 @@ div.imagedesc{
 <p>Come facciamo a leggere da standard output la distanza misurata? Ora capisco la necessità di sonardevice, ma si potrebbe invece utilizzare al posto di sonar.py il file (anch'esso già fornito) SonarMqtt.py, software per il sonarHCSR04 scritto in Python che pubblica sul broker MQTT mqtt.eclipseprojects.io TOPIC= unibo/sonar/events l’evento msg(sonardata,event,sonar,none,distance(D),N). Proverò quindi a procedere in quest'ultimo modo.</p>
 <p>Per permettere all'attore di leggere i messaggi Mqtt utilizzo come base lo script fornito mqttPlotQakEvents.py, rimuovendo la parte relativa alla creazione del grafico.</p>
 
+<p>Purtroppo mi sono trovata un po' in difficoltà su questa parte che per il momento lascio incompleta.</p>
+<p>Gli attori che ricevono la distanza sono di semplice implementazione, simile a quelli creati nel progetto rasp2025ledalone.</p>
+
 
 <h2>Test plans</h2> 
 <div>

@@ -1,11 +1,14 @@
 System sonarled2025
 
-mqttBroker "192.168.1.189" : 1883 eventTopic "sensor/sonar"
+mqttBroker "192.168.1.132" : 1883 eventTopic "sensor/sonar" //TODO metti ip giusto
 
 Dispatch sonarstart : sonarstart(X)
 Dispatch sonarstop  : sonarstop(X)
 
+Event distancestream : distancestream(D)
+
 Context ctx_sonar ip [ host="localhost" port=8075] 
+Context ctx_observers ip [ host="192.168.1.132" port=8360]//TODO metti ip giusto
 
 QActor sonar_manager context ctx_sonar{
 	import "main.java.*"
@@ -34,4 +37,27 @@ QActor sonar_manager context ctx_sonar{
 		[# sonarOn=false #]
 	}
 	
+	State handleDistance{
+		emitlocalstream distancestream : distancestream(D) //mettere val distanza letta
+	}
+	
 }
+
+QActor sonar_observer context ctx_observers{
+	State s0 initial {  		
+  		println("$name started")
+  		subscribeTo sonar_manager for distancestream
+	}	
+	Goto work
+	
+	State work{
+		
+	}
+	Transition t0
+		whenEvent distancestream -> handleEvent
+		
+	State handleEvent{
+		printCurrentMessage color magenta
+	}
+	Goto work
+ }
