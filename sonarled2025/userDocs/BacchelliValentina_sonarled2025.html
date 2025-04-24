@@ -284,7 +284,8 @@ div.imagedesc{
 <p>Per lo stesso motivo descritto nella parte di analisi del problema, mi risulta un po' ridondante inserire anche il componente datacleaner, tuttavia lo mantengo per implementare anche in un progetto così semplice le buone pratiche come il principio di singola responsabilità.</p>
 <p>Tale componente dovrà filtrare in modo più accurato (ovvero? cosa c'è di non accurato nel mettere <span class="pre">0&lt;D&lt;=150</span>?) i valori di distanza emessi da sonardevice.</p>
 
-
+<p>Come facciamo a leggere da standard output la distanza misurata? Ora capisco la necessità di sonardevice, ma si potrebbe invece utilizzare al posto di sonar.py il file (anch'esso già fornito) SonarMqtt.py, software per il sonarHCSR04 scritto in Python che pubblica sul broker MQTT mqtt.eclipseprojects.io TOPIC= unibo/sonar/events l’evento msg(sonardata,event,sonar,none,distance(D),N). Proverò quindi a procedere in quest'ultimo modo.</p>
+<p>Per permettere all'attore di leggere i messaggi Mqtt utilizzo come base lo script fornito mqttPlotQakEvents.py, rimuovendo la parte relativa alla creazione del grafico.</p>
 
 
 <h2>Test plans</h2> 

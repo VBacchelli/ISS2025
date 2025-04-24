@@ -1,0 +1,37 @@
+System sonarled2025
+
+mqttBroker "192.168.1.189" : 1883 eventTopic "sensor/sonar"
+
+Dispatch sonarstart : sonarstart(X)
+Dispatch sonarstop  : sonarstop(X)
+
+Context ctx_sonar ip [ host="localhost" port=8075] 
+
+QActor sonar_manager context ctx_sonar{
+	import "main.java.*"
+	State s0 initial {
+		println("$name - STARTED") 
+	}Goto waitCmd 
+	 
+	State waitCmd{  
+		println("waiting ...") 
+	}   
+	Transition t0     
+ 		whenMsg sonarstart  -> turnSonarOn
+		whenMsg sonarstop -> turnSonarOff
+		
+	State turnSonarOn{
+		println("turning sonar on")
+		[# Runtime.getRuntime().exec("python mqttReceiver.py")#]
+		[# Runtime.getRuntime().exec("python SonarMqtt.py") #]
+ 		[# sonarOn = true 	#]
+	}
+	
+	State turnSonarOff{
+		println("turning sonar off")
+		[# Runtime.getRuntime().exec("pkill -f SonarMqtt.py") #] //come lo stoppo in modo più carino?
+		[# Runtime.getRuntime().exec("pkill -f mqttReceiver.py") #]
+		[# sonarOn=false #]
+	}
+	
+}
