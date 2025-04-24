@@ -253,24 +253,38 @@ div.imagedesc{
 
 <h2>Requirement analysis</h2>
 <div>
-	<p>I comandi devono essere ricevuti via rete. Questo si può realizzare con diversi protocolli, </p>
+	<p>I comandi di start e stop del sonar devono essere ricevuti via rete, presumo (anche se non ne sono certa leggendo solamente la consegna) che si intenda da componenti Caller come quelli realizzati in Java nel progetto precedente (rasp2025ledalone). Questo si può realizzare con diversi protocolli, appunto come nel progetto precedente, perciò possiamo riutilizzare quegli stessi componenti Caller con minime modifiche.</p>
+	<p></p>
 </div>
 <h3>Software fornito dal committente</h3>
 <div>
 	<ul><p><li>sonar.py: codice in python che attiva il sonar fisico e scrive sul dispositivo standard di output, a intervalli temporali fissi, i valori della distanza corrente rilevata.</li></p></ul>
-	Questo è codice di basso livello che non contiene la logica di comunicazione necessaria. 
+	<p>Questo è codice di basso livello che non contiene la logica di comunicazione necessaria. </p>
 </div>
 
 <h2>Problem analysis</h2>
+<h3>Considerazioni personali</h3>
+<ol>
+<li><p>Inizialmente, ho pensato di iniziare con una struttura simile a quella del progetto precedente: un attore che gestisse i dispatch e 3 attori in grado di ricevere i vari tipi di eventi emessi. </p></li>
+<li><p>Il primo problema che si pone è come l'attore gestore del sonar possa recuperare la distanza misurata. Il codice python a nostra disposizione scrive su standard output, quindi avremo bisogno di un attore che sia in grado di leggere questi messaggi. Questo però ci vincola ad avere l'attore in esecuzione sul raspberry.</p></li>
+<li><p>Per quanto riguarda la trasmissione della distanza misurata ai componenti interessati,  l’attore che controlla il sonar deve in qualche modo riuscire a comunicare con gli altri attori del sistema. Questo significa che dovrebbe conoscerli tutti per nome oppure avere un riferimento diretto a ciascuno di loro. Usare MQTT semplifica molto le cose: invece di gestire ogni singolo collegamento, basta che l’attore parli con il broker, che poi si occupa di smistare i messaggi.</p>
+<p>Con QAK questo risulta ancora più semplice grazie al concetto di contesto e all'emissione di eventi: ci basta far emettere un evento contenente il valore di distanza dall'attore che gestisce il sonar.</p></li>
+</ul>
+<h3>Analisi formale del problema</h3>
 <p>Si rimanda all'<a href="RaspApplCode24.html#progetto-sonarqak24">analisi già svolta a lezione</a></p>
+<p>N.B. senza questa avrei pensato di fare meno attori; perché non unire in un attore unico sonar24 e sonardevice? Immagino sia migliore per la modularizzazione in caso di progetti più grandi, ma per il nostro caso mi sembra quasi esagerato dividere le responsabilità. Questa mia idea è supportata dal fatto che nei requisiti si parli di un attore che "gestisce" il sonar e rende disponibile la distanza a componenti interessati; da queste parole sembra quindi che sia un attore unico a fare da broker, ad avviare e fermare il sonar e a leggere la distanza misurata.</p>
+<p>Pensando al punto 2 delle mie considerazioni, inizia già a sembrarmi più logica questa separazione: posso avere un attore locale che legge da standard output, e pubblica le distanze su un topic MQTT. Tuttavia le responsabilità dei singoli componenti rimangono poche nonostante questa considerazione e si potrebbero comunque unire a mio parere.</p>
+
 
 <h2>Progettazione</h2>
 <p>La prima parte della progettazione è già stata <a href="RaspApplCode24.html#progetto-sonarqak24">svolta a lezione</a></p>
+
 <p>Si tratta qui invece la parte di progettazione relativa al SistemaRilevamento.</p>
+
 
 <h2>Test plans</h2> 
 <div>
-	
+	<p>La parte di testing sul Raspberry sarà svolta in un momento successivo perché non ho con me il materiale necessario.</p>
 </div>
 
 <!-- USEFUL
