@@ -1,4 +1,4 @@
-Materiale relativo al corso di Ingegneria dei Sistemi Software dell'Anno Accademico 2024-2025 (Ingegneria Informatica M - Alma Mater Studiorum, Università di Bologna)
+Materiale relativo al corso di Ingegneria dei Sistemi Software dell'Anno Accademico 2024-2025 (Ingegneria Informatica M - Alma Mater Studiorum, Università di Bologna). Sono presenti solo i progetti che presentano differenze rispetto a quelli del professore.
 
 <h2 id="Fase1">Fase 1</h2>  
 
