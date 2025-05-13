@@ -14,3 +14,7 @@ Materiale relativo al corso di Ingegneria dei Sistemi Software dell'Anno Accadem
 * [rasp2025ledalone](rasp2025ledalone): progettazione di un attore che controlli l'accensione e spegnimento di un led connesso a un Raspberry Pi
 * [sonarled2025](sonarled2025): progetto con un led e un sonar collegati a un Raspberry e controllati da attori. Se la distanza rilevata dal sonar è inferione a un valore prefissato LIMIT si deve accendere il Led
 * **Relazione finale fase 2** - [Fase2ISS25-BacchelliValentina.pdf](https://github.com/VBacchelli/ISS2025/blob/main/Fase2ISS2025-BacchelliValentina.pdf)
+
+<h2 id="Fase3">Fase 3</h2>  
+
+### 
